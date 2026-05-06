@@ -1,0 +1,34 @@
+/* Блок (вся карточка) */
+.profil-card {
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    font-family: sans-serif;
+}
+
+/* Элемент (имя внутри карточки) */
+.profil-card__name {
+    margin: 0 0 0.5rem 0;
+    color: #1a1a1a;
+    font-size: 1.25rem;
+}
+
+/* Элемент (роль) */
+.profil-card__role {
+    margin: 0.25rem 0;
+    font-weight: 600;
+    color: #007bff;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05rem;
+}
+
+/* Элемент (город) */
+.profil-card__city {
+    margin: 0.25rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}

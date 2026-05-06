@@ -1,25 +1,19 @@
 // import { useState } from "react";
 import "./App.css";
-import { Stats } from "./components/Stats";
-import { Profil } from "./components/Profil";
-function Bienvenue() {
-    const date = new Date().toLocaleDateString("fr-FR");
-    const visites = Math.floor(Math.random() * 100);
-    return (
-        <>
-            <h2>Bienvenue dans mon application !</h2>
-            <p>Aujourd'hui: {date}</p>
-            <p>Nombre de visites: {visites}</p>
-        </>
-    );
-}
+import { Profil } from "./components/Profil/Profil";
+import { Badge } from "./components/Badge/Badge";
 
 function App() {
     return (
-        <div class="class-app">
-            <Bienvenue />
-            <Profil />
-            <Stats />
+        <div className="app">
+            <Profil nom="Alice Martin" role="Developpeur" ville="Paris" />
+            <Profil nom="Bob Dupont" role="Designer" ville="Lyon" />
+            <Profil nom="Clara Petit" role="Chef de projet" ville="Bordeaux" />
+            <Badge status="en-cours">Traitement en cours</Badge>
+            <Badge status="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, consectetur.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, consectetur.</p>
+            </Badge>
         </div>
     );
 }

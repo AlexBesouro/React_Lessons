@@ -28,7 +28,7 @@ function App() {
         <div className="app">
             <Header subtitle="My learning project" />
             <main className="app-main">
-                <NoteList notes={notes} />
+                <NoteList notes={notes || []} />
             </main>
         </div>
     );

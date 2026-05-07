@@ -1,6 +1,14 @@
 import { NoteCard } from "../NoteCard/NoteCard";
 import "./NoteList.css";
 function NoteList({ notes }) {
+    if (!notes.length > 0) {
+        return (
+            <section className="note-list">
+                <h2>Aucune note pour le moment. Creez votre premiere note !</h2>
+            </section>
+        );
+    }
+
     return (
         <section className="note-list">
             <h2>Mes notes({notes.length})</h2>

@@ -1,5 +1,5 @@
 .app-header {
-    background-color: #ffffff;
+    background-color: #8b3333;
     padding: 2rem 1rem;
     text-align: center;
     border-bottom: 1px solid #eaeaea;
@@ -11,7 +11,7 @@
 .app-header h1 {
     margin: 0;
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: #b3c6d8;
     letter-spacing: -0.5px;
 }
 

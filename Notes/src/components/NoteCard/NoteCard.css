@@ -1,5 +1,5 @@
 .note-card {
-    background: white;
+    background: rgb(97, 21, 21);
     border-radius: 8px;
     padding: 1.2rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -17,7 +17,7 @@
 
 .note-card__content {
     font-size: 0.95rem;
-    color: #555;
+    color: #d6d6d6;
     margin-bottom: 1rem;
     line-height: 1.5;
 }
@@ -26,7 +26,7 @@
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
-    background: #eee;
+    background: #eec1c1;
     padding: 2px 8px;
     border-radius: 4px;
     width: fit-content;

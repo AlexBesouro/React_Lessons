@@ -1,21 +1,23 @@
 // import { useState } from "react";
 import "./App.css";
-import { Profil } from "./components/Profil/Profil";
-import { Badge } from "./components/Badge/Badge";
+// import { Profil } from "./components/Profil/Profil";
+// import { Badge } from "./components/Badge/Badge";
+import { ListFilms } from "./components/Films/Films.jsx";
 
 function App() {
     return (
         <div className="app">
-            <Profil nom="Alice Martin" role="Developpeur" ville="Paris" />
-            <Profil nom="Bob Dupont" role="Designer" ville="Lyon" />
-            <Profil nom="Clara Petit" role="Chef de projet" ville="Bordeaux" />
-            <Badge status="en-cours">Traitement en cours</Badge>
-            <Badge status="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, consectetur.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, consectetur.</p>
-            </Badge>
+            <h1>Ma videotheque</h1>
+            <ListFilms films={films} />
         </div>
     );
 }
 
 export default App;
+
+const films = [
+    { id: 1, titre: "Inception", annee: 2010, note: 9 },
+    { id: 2, titre: "Interstellar", annee: 2014, note: 8 },
+    { id: 3, titre: "The Dark Knight", annee: 2008, note: 10 },
+    { id: 4, titre: "Tenet", annee: 2020, note: 6 },
+];

@@ -9,59 +9,62 @@ function FormulaireNote() {
         estImportante: false,
     });
 
-    function mettreAJourNote(nomChamp, valeur) {
+    function handleChange(event) {
+        const { name, value, type, checked } = event.target;
+        const finalValue = type === "checkbox" ? checked : value;
         setNote({
             ...note,
-            [nomChamp]: valeur,
+            [name]: finalValue,
         });
     }
-
-    function soumettreNote() {
-        console.log("Note soumise :", note);
+    function handleSubmit(event) {
+        event.preventDefault();
+        if (note.titre.trim() === "" || note.contenu.trim() === "") {
+            alert("Veuillez remplir les champs obligatoires");
+            return;
+        }
+        alert(`Message envoye de la part de Alex !`);
         setNote({ titre: "", contenu: "", categorie: "Divers", estImportante: false });
     }
 
     return (
         <div>
             <h2>Nouvelle note</h2>
-
-            <input
-                type="text"
-                value={note.titre}
-                onChange={(e) => mettreAJourNote("titre", e.target.value)}
-                placeholder="Titre de la note"
-            />
-
-            <textarea
-                value={note.contenu}
-                onChange={(e) => mettreAJourNote("contenu", e.target.value)}
-                placeholder="Contenu de la note..."
-            />
-
-            <select value={note.categorie} onChange={(e) => mettreAJourNote("categorie", e.target.value)}>
-                <option value="Divers">Divers</option>
-                <option value="Formation">Formation</option>
-                <option value="Projets">Projets</option>
-                <option value="Personnel">Personnel</option>
-            </select>
-
-            <label>
+            <form onSubmit={handleSubmit}>
                 <input
-                    type="checkbox"
-                    checked={note.estImportante}
-                    onChange={(e) => mettreAJourNote("estImportante", e.target.checked)}
+                    name="titre"
+                    type="text"
+                    value={note.titre}
+                    onChange={handleChange}
+                    placeholder="Titre de la note"
                 />
-                Note importante
-            </label>
 
+                <textarea
+                    name="contenu"
+                    value={note.contenu}
+                    onChange={handleChange}
+                    placeholder="Contenu de la note..."
+                />
+
+                <select name="categorie" value={note.categorie} onChange={handleChange}>
+                    <option value="Divers">Divers</option>
+                    <option value="Formation">Formation</option>
+                    <option value="Projets">Projets</option>
+                    <option value="Personnel">Personnel</option>
+                </select>
+
+                <label>
+                    <input name="estImportante" type="checkbox" checked={note.estImportante} onChange={handleChange} />
+                    Note importante
+                </label>
+                <button type="submit">Enregistrer la note</button>
+            </form>
             <div className="apercu">
-                <h3>{note.titre || "Sans titre"}</h3>
+                <h3>{note.titre}</h3>
                 <p>{note.contenu || "Aucun contenu"}</p>
                 <span>Categorie : {note.categorie}</span>
                 {note.estImportante && <strong> ⭐ Importante</strong>}
             </div>
-
-            <button onClick={soumettreNote}>Enregistrer la note</button>
         </div>
     );
 }

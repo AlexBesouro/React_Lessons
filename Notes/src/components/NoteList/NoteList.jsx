@@ -1,6 +1,6 @@
 import { NoteCard } from "../NoteCard/NoteCard";
 import "./NoteList.css";
-function NoteList({ notes, onDelete }) {
+function NoteList({ notes, onDelete, addToImportant }) {
     if (notes.length === 0) {
         return (
             <section className="note-list">
@@ -14,7 +14,7 @@ function NoteList({ notes, onDelete }) {
             <h2>Mes notes({notes.length})</h2>
             <div className="notes-grid">
                 {notes.map((note) => {
-                    return <NoteCard key={note.id} {...note} onDelete={onDelete} />;
+                    return <NoteCard key={note.id} {...note} onDelete={onDelete} addToImportant={addToImportant} />;
                 })}
             </div>
         </section>

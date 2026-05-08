@@ -1,3 +1,4 @@
+/* Базовая карточка */
 .note-card {
     background: #1e1e1e;
     border-radius: 12px;
@@ -6,14 +7,14 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    transition:
-        transform 0.2s,
-        border-color 0.2s;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.note-card:hover {
-    transform: translateY(-4px);
-    border-color: #444;
+/* Состояние, если заметка важная (подсветка рамки) */
+.note-card--important {
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
 }
 
 .note-card__title {
@@ -29,6 +30,7 @@
     margin: 0;
 }
 
+/* Стили для категории и даты */
 .note-card__category {
     font-size: 0.7rem;
     font-weight: bold;
@@ -39,24 +41,58 @@
     width: fit-content;
 }
 
+.note-card__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
 .note-card__date {
     color: #555;
     font-size: 0.8rem;
-    margin-top: auto;
+}
+
+.important-badge {
+    font-size: 1.2rem;
+}
+
+/* Контейнер для кнопок */
+.note-card__actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Кнопки */
+.delete-btn,
+.important-btn {
+    flex: 1; /* Кнопки будут одинаковой ширины */
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
 }
 
 .delete-btn {
     background: transparent;
     color: #ff4d4d;
     border: 1px solid #ff4d4d;
-    padding: 8px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    transition: all 0.2s;
 }
 
 .delete-btn:hover {
     background: #ff4d4d;
     color: white;
+}
+
+.important-btn {
+    background: transparent;
+    border: 1px solid #444;
+    color: #ffd700;
+}
+
+.important-btn:hover {
+    border-color: #ffd700;
 }

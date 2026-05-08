@@ -1,0 +1,91 @@
+/* Основной контейнер */
+div {
+    color: #e0e0e0;
+    font-family: sans-serif;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h2 {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+/* Поля ввода: input, textarea, select */
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    background-color: #2d2d2d;
+    border: 1px solid #404040;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box; /* Чтобы padding не раздувал ширину */
+}
+
+input:focus,
+textarea:focus {
+    border-color: #646cff;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Чекбокс и метка */
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Кнопка */
+button {
+    background-color: #646cff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #535bf2;
+}
+
+/* Карточка превью */
+.apercu {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #252525;
+    border-left: 4px solid #646cff;
+    border-radius: 4px;
+}
+
+.apercu h3 {
+    margin: 0 0 10px 0;
+    color: #646cff;
+}
+
+.apercu p {
+    font-style: italic;
+    color: #b0b0b0;
+}
+
+strong {
+    color: #ffd700; /* Золотой для звезды */
+}

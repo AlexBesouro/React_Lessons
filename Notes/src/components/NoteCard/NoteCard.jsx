@@ -1,5 +1,5 @@
 import "./NoteCard.css";
-function NoteCard({ title, content, category }) {
+function NoteCard({ id, title, content, category, onDelete }) {
     const date = new Date().toLocaleDateString("fr-FR");
     return (
         <div className="note-card">
@@ -7,6 +7,9 @@ function NoteCard({ title, content, category }) {
             <p className="note-card__content">{content}</p>
             <span className="note-card__category">{category}</span>
             <small className="note-card__date">Aujourd'hui: {date}</small>
+            <button className="delete-btn" onClick={() => onDelete(id)}>
+                Delete note
+            </button>
         </div>
     );
 }

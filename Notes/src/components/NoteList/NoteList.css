@@ -1,18 +1,23 @@
 .note-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 20px;
 }
 
 .note-list h2 {
-    color: #c0bcbc;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 0.5rem;
+    color: var(--text-main);
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
 }
 
-/* Контейнер для самих карточек */
 .notes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
 }

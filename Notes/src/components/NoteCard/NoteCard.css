@@ -1,42 +1,62 @@
 .note-card {
-    background: rgb(97, 21, 21);
-    border-radius: 8px;
-    padding: 1.2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #1e1e1e;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #333;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    border-left: 5px solid #646cff; /* Акцентная линия */
+    gap: 12px;
+    transition:
+        transform 0.2s,
+        border-color 0.2s;
+}
+
+.note-card:hover {
+    transform: translateY(-4px);
+    border-color: #444;
 }
 
 .note-card__title {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.15rem;
-    color: #1a1a1a;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #ffffff;
 }
 
 .note-card__content {
     font-size: 0.95rem;
-    color: #d6d6d6;
-    margin-bottom: 1rem;
+    color: #a0a0a0;
     line-height: 1.5;
+    margin: 0;
 }
 
 .note-card__category {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: bold;
-    text-transform: uppercase;
-    background: #eec1c1;
-    padding: 2px 8px;
-    border-radius: 4px;
+    color: #646cff;
+    background: rgba(100, 108, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
     width: fit-content;
-    color: #666;
 }
 
 .note-card__date {
-    margin-top: 1rem;
-    display: block;
-    color: #999;
+    color: #555;
     font-size: 0.8rem;
-    font-style: italic;
+    margin-top: auto;
+}
+
+.delete-btn {
+    background: transparent;
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+
+.delete-btn:hover {
+    background: #ff4d4d;
+    color: white;
 }

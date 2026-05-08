@@ -1,15 +1,69 @@
 :root {
-    background-color: bisque;
-}
-.app {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #363636;
-    min-height: 100vh;
+    --bg-dark: #121212;
+    --bg-card: #1e1e1e;
+    --bg-input: #2a2a2a;
+    --accent: #646cff;
+    --text-main: #e0e0e0;
+    --border: #333;
 }
 
-.app-main {
-    margin-top: 2rem;
+body {
+    background-color: var(--bg-dark);
+    margin: 0;
+    color: var(--text-main);
+    font-family: "Inter", sans-serif;
+}
+
+.app {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.form {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+    border: 1px solid var(--border);
+}
+
+.form h2 {
+    margin: 0;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+input,
+textarea,
+select {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--accent);
+}
+
+.form button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background: #7b83ff;
 }

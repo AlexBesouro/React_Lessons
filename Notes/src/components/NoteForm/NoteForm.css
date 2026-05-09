@@ -1,0 +1,138 @@
+:root {
+    --bg-card: #1e1e1e;
+    --border: #333;
+    --accent: #646cff;
+    --text-main: #ffffff;
+    --text-muted: #888;
+    --error: #ff4d4d;
+    --input-bg: #2a2a2a;
+}
+
+/* Основной контейнер-карточка */
+.form {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    min-width: 500px;
+    max-width: 700px;
+    margin: 2rem auto;
+    color: var(--text-main);
+}
+
+.form h2 {
+    margin: 0 0 1.5rem 0;
+    color: var(--accent);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Сама форма и отступы между элементами */
+.form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Общий стиль для текстовых лейблов */
+.form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Поля ввода: input, textarea, select */
+.form input[type="text"],
+.form textarea,
+.form select {
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    color: var(--text-main);
+    font-size: 1rem;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+    outline: none;
+}
+
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
+}
+
+.form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Твой запрос: Стилизация чекбокса и вопроса "Important?" */
+.form label[for="checkbox"] {
+    flex-direction: row; /* Текст и окно в одну линию */
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    color: var(--text-main); /* Чтобы вопрос был ярче */
+    font-weight: 500;
+    margin-top: 0.5rem;
+    user-select: none;
+}
+
+.form input[type="checkbox"] {
+    width: 1.3rem;
+    height: 1.3rem;
+    accent-color: var(--accent); /* Цвет галочки под тему */
+    cursor: pointer;
+    margin: 0;
+}
+
+/* Кнопка отправки */
+.form button[type="submit"] {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        transform 0.1s,
+        opacity 0.2s;
+    margin-top: 0.5rem;
+    align-self: flex-start; /* Кнопка не на всю ширину */
+}
+
+.form button:hover {
+    opacity: 0.9;
+}
+
+.form button:active {
+    transform: scale(0.98);
+}
+
+/* Сообщения об ошибках */
+.form p {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    /* Цвет уже задан инлайново в JS, но можно добавить анимацию */
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

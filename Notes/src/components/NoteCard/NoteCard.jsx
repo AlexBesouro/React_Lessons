@@ -2,7 +2,7 @@ import "./NoteCard.css";
 function NoteCard({ id, title, content, category, important, onDelete, addToImportant }) {
     const date = new Date().toLocaleDateString("fr-FR");
     return (
-        <div className="note-card">
+        <div className={`note-card ${important ? "important" : ""}`}>
             <h3 className="note-card__title">{title}</h3>
             <p className="note-card__content">{content}</p>
             <span className="note-card__category">{category}</span>
@@ -15,7 +15,7 @@ function NoteCard({ id, title, content, category, important, onDelete, addToImpo
                     Delete note
                 </button>
                 <button className="important-btn" onClick={() => addToImportant(id)}>
-                    Add to important
+                    {important ? "Delete from important" : "Add to important"}
                 </button>
             </div>
         </div>

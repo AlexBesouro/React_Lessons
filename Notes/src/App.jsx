@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header/Header";
 import { NoteList } from "./components/NoteList/NoteList";
+import { NoteForm } from "./components/NoteForm/NoteForm";
 
 const NOTES = [
     {
@@ -15,23 +16,9 @@ const NOTES = [
 
 function App() {
     const [notes, setNotes] = useState(NOTES);
-    const [form, setForm] = useState({
-        title: "",
-        content: "",
-        category: "",
-        important: false,
-    });
 
-    function updateForm(e) {
-        const { name, value } = e.target;
-        setForm({ ...form, [name]: value });
-    }
-
-    function handleAddNote() {
-        const date = Date.now();
-        const newNote = { ...form, id: date };
-        setNotes([...notes, newNote]);
-        setForm({ title: "", content: "", category: "", important: false });
+    function handleAddNote(form) {
+        setNotes([...notes, form]);
     }
 
     function handleDeleteNote(id) {
@@ -55,37 +42,7 @@ function App() {
             <Header subtitle={`Total notes: ${notes.length}`} />
 
             <main className="app-main">
-                <div className="form">
-                    <h2>Add notes</h2>
-                    <label htmlFor="titre">
-                        <input
-                            id="titre"
-                            type="text"
-                            name="title"
-                            value={form.title}
-                            onChange={updateForm}
-                            placeholder="Note's title"
-                        />
-                    </label>
-                    <label htmlFor="content">
-                        <textarea
-                            name="content"
-                            id="content"
-                            value={form.content}
-                            onChange={updateForm}
-                            placeholder="Content of note..."
-                        />
-                    </label>
-                    <label htmlFor="category">
-                        <select id="category" name="category" value={form.category} onChange={updateForm}>
-                            <option value="Other">Other</option>
-                            <option value="Learning">Learning</option>
-                            <option value="Projects">Projects</option>
-                            <option value="Personal">Personal</option>
-                        </select>
-                    </label>
-                    <button onClick={handleAddNote}>Add note</button>
-                </div>
+                <NoteForm onAddNote={handleAddNote} />
                 <NoteList notes={notes || NOTES} onDelete={handleDeleteNote} addToImportant={handleImportant} />
             </main>
         </div>

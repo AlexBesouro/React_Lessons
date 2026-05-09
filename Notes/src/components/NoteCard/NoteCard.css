@@ -1,51 +1,99 @@
-/* Базовая карточка */
 .note-card {
-    background: #1e1e1e;
+    background: var(--bg-card);
     border-radius: 12px;
     padding: 1.5rem;
-    border: 1px solid #333;
+    border: 1px solid var(--border);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 1rem;
     transition: all 0.3s ease;
     position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Состояние, если заметка важная (подсветка рамки) */
-.note-card--important {
-    border-color: #ffd700;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+.note-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.note-card.important {
+    border-color: var(--warning);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
 }
 
 .note-card__title {
     margin: 0;
-    font-size: 1.2rem;
-    color: #ffffff;
+    font-size: 1.25rem;
+    color: var(--text-main);
+    font-weight: 600;
 }
 
 .note-card__content {
     font-size: 0.95rem;
-    color: #a0a0a0;
-    line-height: 1.5;
+    color: var(--text-secondary);
+    line-height: 1.6;
     margin: 0;
+    flex-grow: 1;
 }
 
-/* Стили для категории и даты */
 .note-card__category {
-    font-size: 0.7rem;
-    font-weight: bold;
-    color: #646cff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
     background: rgba(100, 108, 255, 0.1);
-    padding: 4px 10px;
+    padding: 0.25rem 0.75rem;
     border-radius: 20px;
     width: fit-content;
+    align-self: flex-start;
 }
 
-.note-card__meta {
+.meta {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 5px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.note-card__date {
+    margin: 0;
+}
+
+.important {
+    color: var(--warning);
+    font-size: 1.2rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.delete-btn {
+    background: var(--error);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: #d32f2f;
+}
+
+.important-btn {
+    background: var(--success);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.important-btn:hover {
+    background: #388e3c;
 }
 
 .note-card__date {

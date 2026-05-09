@@ -1,40 +1,13 @@
-:root {
-    --bg-dark: #121212;
-    --bg-card: #1e1e1e;
-    --bg-input: #2a2a2a;
-    --accent: #646cff;
-    --text-main: #e0e0e0;
-    --border: #333;
-}
-
-body {
-    background-color: var(--bg-dark);
-    margin: 0;
-    color: var(--text-main);
-    font-family: "Inter", sans-serif;
-}
-
 .app {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-.form {
-    background: var(--bg-card);
-    padding: 20px;
-    border-radius: 12px;
+.app-main {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 40px;
-    border: 1px solid var(--border);
-}
-
-.form h2 {
-    margin: 0;
-    color: var(--accent);
-    font-size: 1.2rem;
+    gap: 2rem;
 }
 
 input,
@@ -44,8 +17,23 @@ select {
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 12px;
-    color: white;
+    color: var(--text-main);
     outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--accent);
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 500;
 }
 
 input:focus,

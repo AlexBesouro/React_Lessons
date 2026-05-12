@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./NoteForm.css";
+import styles from "./NoteForm.module.css";
 
 function NoteForm({ onAddNote }) {
     const [formData, setFormData] = useState({
@@ -57,7 +57,7 @@ function NoteForm({ onAddNote }) {
         setErrors({});
     }
     return (
-        <div className="form">
+        <div className={styles.form}>
             <form onSubmit={handleSubmit}>
                 <h2>Add notes</h2>
                 <label htmlFor="titre">

@@ -1,0 +1,49 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    padding: 0.5rem 2rem 0.5rem;
+    margin-top: auto; /* Поможет прижать футер к низу, если контента мало */
+    height: 120px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-info h3 {
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-contrast);
+    font-size: 1.1rem;
+}
+
+.footer-info p {
+    margin: 0;
+    color: var(--text-muted);
+    max-width: 500px;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}

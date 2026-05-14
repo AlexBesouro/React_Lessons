@@ -1,71 +1,60 @@
 .weather-card {
-    background-color: var(--card-bg);
+    background: var(--bg-card);
     padding: 1.5rem;
-    border-radius: 16px;
-    border: 1px solid var(--border-color);
-    max-width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.weather-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-color);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    width: fit-content;
+    min-width: 240px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .city {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    letter-spacing: 1px;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
 }
 
 .temp-container {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
     margin: 1rem 0;
+    display: flex;
+    align-items: baseline;
 }
 
 .temp {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--text-primary);
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(to bottom, #fff, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .unit {
-    font-size: 1.2rem;
-    color: var(--accent-color);
-    margin-left: 4px;
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-left: 5px;
 }
 
 .coords {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-secondary);
-    font-family: monospace;
+    font-family: "JetBrains Mono", monospace;
 }
 
 .loading {
-    color: var(--accent-color);
-    font-style: italic;
-    animation: pulse 1.5s infinite;
+    color: var(--accent);
+    animation: pulse 2s infinite;
 }
-
 .error {
-    color: #ff5252;
-    font-size: 0.9rem;
+    color: var(--danger);
 }
 
 @keyframes pulse {
-    0% {
-        opacity: 0.6;
-    }
-    50% {
+    0%,
+    100% {
         opacity: 1;
     }
-    100% {
-        opacity: 0.6;
+    50% {
+        opacity: 0.5;
     }
 }

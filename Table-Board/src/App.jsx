@@ -1,12 +1,21 @@
-import { useEffect, useState } from "react";
-import { WeatherWidget } from "./components/WeatherWidget";
+import { Routes, Route } from "react-router-dom";
+import { Layout } from "./components/Layout";
+import { Dashboard } from "./pages/Dashboard";
+import { Settings } from "./pages/Settings";
+import { Notes } from "./pages/Notes";
+import { Tasks } from "./pages/Tasks";
 import "./App.css";
 
 function App() {
     return (
-        <div className="app">
-            <WeatherWidget latitude={48.8566} longitude={2.3522} />
-        </div>
+        <Routes>
+            <Route element={<Layout />}>
+                <Route path="/" element={<Dashboard />}></Route>
+                <Route path="/notes" element={<Notes />}></Route>
+                <Route path="/tasks" element={<Tasks />}></Route>
+                <Route path="/settings" element={<Settings />}></Route>
+            </Route>
+        </Routes>
     );
 }
 

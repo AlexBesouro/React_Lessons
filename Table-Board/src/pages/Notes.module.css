@@ -1,0 +1,56 @@
+.container {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.title {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.notesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.noteCard {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent); /* Акцентная полоса слева */
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.noteCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.noteHeader {
+    color: var(--accent);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.noteContent {
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 1rem;
+}

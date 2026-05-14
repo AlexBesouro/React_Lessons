@@ -20,6 +20,9 @@
     flex-direction: column;
     gap: 12px;
 }
+a {
+    color: #fd9090;
+}
 
 .taskItem {
     background: var(--bg-card);

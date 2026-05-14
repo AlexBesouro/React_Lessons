@@ -1,0 +1,105 @@
+.container {
+    animation: fadeIn 0.4s ease-out;
+    max-width: 700px;
+}
+
+/* Стили для карточки */
+.card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--accent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.status {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: var(--bg-main);
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Контейнер для кнопок */
+.actions {
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+}
+
+/* Базовый стиль кнопки */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    font-size: 0.9rem;
+}
+
+.btnPrimary {
+    background: var(--accent);
+    color: var(--bg-main);
+}
+
+.btnPrimary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+}
+
+.btnOutline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+}
+
+.btnOutline:hover {
+    background: var(--border);
+    color: var(--accent);
+}
+
+/* Стили для ошибки */
+.errorContainer {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.errorTitle {
+    color: var(--danger);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+import { TASKS } from "../data/tasks";
 import styles from "./Tasks.module.css";
 
 function Tasks() {
-    const taskData = ["Apprendre React Router (en cours !)", "Découvrir useContext", "Maîtriser useReducer"];
+    const taskData = TASKS;
 
     return (
         <div className={styles.container}>
@@ -9,10 +11,9 @@ function Tasks() {
             <p className={styles.description}>La gestion des tâches sera ajoutée dans les prochaines fiches.</p>
 
             <ul className={styles.taskList}>
-                {taskData.map((task, index) => (
-                    <li key={index} className={styles.taskItem}>
-                        <span className={styles.taskEmoji}>📌</span>
-                        <span className={styles.taskText}>{task}</span>
+                {taskData.map((task) => (
+                    <li key={task.id} className={styles.taskItem}>
+                        <Link to={`/tasks/${task.id}`}>{task.title}</Link>
                     </li>
                 ))}
             </ul>

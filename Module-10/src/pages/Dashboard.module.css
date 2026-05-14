@@ -1,0 +1,66 @@
+/* Dashboard Page - Dark Theme */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.dashboard-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent);
+}
+
+.dashboard-card h3 {
+    margin: 0;
+    color: var(--accent);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.dashboard-card p {
+    margin: 0;
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.dashboard-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--accent-bg);
+    border-left: 4px solid var(--accent);
+    border-radius: 6px;
+}
+
+.dashboard-stat-label {
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.dashboard-stat-value {
+    color: var(--accent);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}

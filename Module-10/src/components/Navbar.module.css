@@ -1,0 +1,44 @@
+/* Navbar Component - Dark Theme */
+.navbar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--text-main);
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.navbar a:hover {
+    background-color: var(--accent-bg);
+    color: var(--accent);
+    border-color: var(--accent-border);
+}
+
+.navbar a.active {
+    color: var(--accent);
+    background-color: var(--accent-bg);
+    border-color: var(--accent-border);
+    font-weight: 600;
+    box-shadow: 0 0 12px rgba(196, 132, 252, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        gap: 0.5rem;
+    }
+
+    .navbar a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}

@@ -1,23 +1,25 @@
 import { Outlet } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import styles from "./Layout.module.css";
+import { ThemeToggle } from "./ThemeToggle";
 
 function Layout() {
     return (
-        <div className={styles.layout}>
-            <header className={styles.header}>
-                <div className={styles.headerContent}>
+        <div className={styles["layout"]}>
+            <header className={styles["header"]}>
+                <div className={styles["headerContent"]}>
                     <Navbar />
+                    <ThemeToggle/>
                 </div>
             </header>
 
-            <main className={styles.main}>
-                <div className={styles.container}>
+            <main className={styles["main"]}>
+                <div className={styles["container"]}>
                     <Outlet />
                 </div>
             </main>
 
-            <footer className={styles.footer}>
+            <footer className={styles["footer"]}>
                 <p>&copy; 2026 Table Board System</p>
             </footer>
         </div>

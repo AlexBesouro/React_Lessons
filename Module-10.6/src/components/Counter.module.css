@@ -1,0 +1,81 @@
+.counter-card {
+    background-color: #1e1e1e;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border: 1px solid #2e2e2e;
+    max-width: 400px;
+    width: 100%;
+}
+
+.counter {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+.counter.negative {
+    color: #ff4d4d;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition:
+        background-color 0.2s,
+        transform 0.1s,
+        border-color 0.2s;
+    margin: 0.5rem;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+.add-btn {
+    background-color: #0b6623;
+    color: #fff;
+}
+
+.add-btn:hover {
+    background-color: #128235;
+}
+
+.sub-btn {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+.sub-btn:hover {
+    background-color: #b30000;
+}
+
+.reset-btn {
+    background-color: #3a3a3a;
+    color: #fff;
+}
+
+.reset-btn:hover {
+    background-color: #4a4a4a;
+}
+
+.step-btn {
+    background-color: #0056b3;
+    color: #fff;
+    display: block;
+    margin: 1.5rem auto 0 auto;
+    width: calc(100% - 1rem);
+}
+
+.step-btn:hover {
+    background-color: #0069d9;
+}

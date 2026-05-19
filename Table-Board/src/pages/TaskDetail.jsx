@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { TASKS } from "../data/tasks";
+
 import styles from "./TaskDetail.module.css";
 import { useTaskContext } from "../hooks/useTaskContext";
 

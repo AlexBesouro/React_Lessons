@@ -7,7 +7,6 @@ function Notes() {
             <p className={styles["description"]}>Les notes rapides seront ajoutées dans les prochaines fiches.</p>
 
             <div className={styles["notesGrid"]}>
-                {/* Карточка заметки */}
                 <article className={styles["noteCard"]}>
                     <header className={styles["noteHeader"]}>Note d'exemple</header>
                     <p className={styles["noteContent"]}>
@@ -15,7 +14,6 @@ function Notes() {
                     </p>
                 </article>
 
-                {/* Ты можешь добавить вторую карточку для теста */}
                 <article className={styles["noteCard"]}>
                     <header className={styles["noteHeader"]}>Rappel</header>
                     <p className={styles["noteContent"]}>

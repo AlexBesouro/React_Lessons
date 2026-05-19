@@ -1,30 +1,17 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const ThemeContext = createContext();
-const LOCAL_STORAGE_THEME_KEY = "table-board-theme";
-
-function getInitialTheme() {
-    const savedTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY);
-    if (savedTheme === "light" || savedTheme === "dark") {
-        return savedTheme;
-    }
-
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-}
 
 function ThemeProvider({ children }) {
-    const [theme, setTheme] = useState(getInitialTheme);
+    const [theme, setTheme] = useLocalStorage("theme", "light");
 
     useEffect(() => {
-        document.documentElement.dataset.theme = theme;
-        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
+        if (!theme) return;
+        document.documentElement.setAttribute("data-theme", theme);
     }, [theme]);
 
-    function toggleTheme() {
-        setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
-    }
-
-    return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
+    return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
 }
 
 export { ThemeProvider, ThemeContext };

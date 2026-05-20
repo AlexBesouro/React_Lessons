@@ -25,4 +25,4 @@ function Notes() {
     );
 }
 
-export { Notes };
+export default Notes;

@@ -18,4 +18,4 @@ function NotFound() {
     );
 }
 
-export { NotFound };
+export default NotFound;

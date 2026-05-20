@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { WeatherWidget } from "../components/WeatherWidget";
+import { WeatherWidgetMemo } from "../components/WeatherWidget";
 import styles from "./Dashboard.module.css";
 
 function Dashboard() {
@@ -23,9 +23,9 @@ function Dashboard() {
                     Session time: <strong>{secondesActivite}</strong>sec
                 </span>
             </p>
-            {<WeatherWidget longitude={2.3522} latitude={48.8566} />}
+            {<WeatherWidgetMemo longitude={2.3522} latitude={48.8566} />}
         </div>
     );
 }
 
-export { Dashboard };
+export default Dashboard;

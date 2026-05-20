@@ -58,4 +58,4 @@ function TaskDetail() {
         </div>
     );
 }
-export { TaskDetail };
+export default TaskDetail;

@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
 import styles from "./WeatherWidget.module.css";
 import { useFetch } from "../hooks/useFetch";
+import { memo } from "react";
 
 function WeatherWidget({ latitude, longitude }) {
+    console.log("WeatherWidget re-rendu");
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code&timezone=Europe/Paris`;
     const { data, loading, error } = useFetch(url);
     return (
@@ -24,5 +25,5 @@ function WeatherWidget({ latitude, longitude }) {
         </div>
     );
 }
-
-export { WeatherWidget };
+const WeatherWidgetMemo = memo(WeatherWidget);
+export { WeatherWidgetMemo };
